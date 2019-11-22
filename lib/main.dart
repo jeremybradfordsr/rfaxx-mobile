@@ -19,14 +19,13 @@ class _RFaxxExplorerState extends State<RFaxxExplorer> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('RFaxx Mobile'),
-        // This drop down menu demonstrates that Flutter widgets can be shown over the web view.
         actions: <Widget>[
           NavigationControls(_controller.future),
           Menu(_controller.future, () => _favorites),
         ],
       ),
       body: WebView(
-        initialUrl: 'http://rfaxx.tk/index.html',
+        initialUrl: 'https://rfaxx.tk/index.html',
         onWebViewCreated: (WebViewController webViewController) {
           _controller.complete(webViewController);
         },
@@ -61,7 +60,6 @@ class _RFaxxExplorerState extends State<RFaxxExplorer> {
 class Menu extends StatelessWidget {
   Menu(this._webViewControllerFuture, this.favoritesAccessor);
   final Future<WebViewController> _webViewControllerFuture;
-  // TODO(efortuna): Come up with a more elegant solution for an accessor to this than a callback.
   final Function favoritesAccessor;
 
   @override
