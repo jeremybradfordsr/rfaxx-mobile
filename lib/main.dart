@@ -25,7 +25,7 @@ class _RFaxxExplorerState extends State<RFaxxExplorer> {
         ],
       ),
       body: WebView(
-        initialUrl: 'https://rfaxx.tk/index.html',
+        initialUrl: 'https://rfaxx.dns.army/',
         onWebViewCreated: (WebViewController webViewController) {
           _controller.complete(webViewController);
         },
